@@ -30,6 +30,8 @@
 
 @implementation CustomTableViewCell
 
+#pragma mark - UIConstraintBasedLayoutCoreMethods
+
 - (void)updateConstraints {
     [super updateConstraints];
     if ([[UIDevice currentDevice].systemVersion compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending) {
