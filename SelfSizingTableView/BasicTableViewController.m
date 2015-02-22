@@ -16,6 +16,10 @@
 
 @implementation BasicTableViewController
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
