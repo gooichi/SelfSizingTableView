@@ -15,6 +15,7 @@
 		D7F2DFF61A96F1BE000B0719 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F2DFF41A96F1BE000B0719 /* LaunchScreen.xib */; };
 		D7F2E0021A96F1BE000B0719 /* SelfSizingTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F2E0011A96F1BE000B0719 /* SelfSizingTableViewTests.m */; };
 		D7F2E0101A98550E000B0719 /* BasicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F2E00F1A98550E000B0719 /* BasicTableViewController.m */; };
+		D7F2F67A1A995F3E002685D5 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F2F6791A995F3E002685D5 /* CustomTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		D7F2E0011A96F1BE000B0719 /* SelfSizingTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfSizingTableViewTests.m; sourceTree = "<group>"; };
 		D7F2E00E1A98550E000B0719 /* BasicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTableViewController.h; sourceTree = "<group>"; };
 		D7F2E00F1A98550E000B0719 /* BasicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTableViewController.m; sourceTree = "<group>"; };
+		D7F2F6781A995F3E002685D5 /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
+		D7F2F6791A995F3E002685D5 /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				D7F2DFEA1A96F1BE000B0719 /* AppDelegate.m */,
 				D7F2E00E1A98550E000B0719 /* BasicTableViewController.h */,
 				D7F2E00F1A98550E000B0719 /* BasicTableViewController.m */,
+				D7F2F6781A995F3E002685D5 /* CustomTableViewController.h */,
+				D7F2F6791A995F3E002685D5 /* CustomTableViewController.m */,
 				D7F2DFEC1A96F1BE000B0719 /* ViewController.h */,
 				D7F2DFED1A96F1BE000B0719 /* ViewController.m */,
 				D7F2DFF21A96F1BE000B0719 /* Images.xcassets */,
@@ -225,6 +230,7 @@
 			files = (
 				D7F2DFEB1A96F1BE000B0719 /* AppDelegate.m in Sources */,
 				D7F2E0101A98550E000B0719 /* BasicTableViewController.m in Sources */,
+				D7F2F67A1A995F3E002685D5 /* CustomTableViewController.m in Sources */,
 				D7F2DFE81A96F1BE000B0719 /* main.m in Sources */,
 				D7F2DFEE1A96F1BE000B0719 /* ViewController.m in Sources */,
 			);
