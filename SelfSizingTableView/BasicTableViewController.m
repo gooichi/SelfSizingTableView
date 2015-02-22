@@ -6,13 +6,15 @@
 #import "BasicTableViewController.h"
 
 #define kDefaultCellHeight 44
-#define kLabelMarginHeight 21
 
-#define kLabelMarginWidthWithAccessoryNone             (15 + 15)
-#define kLabelMarginWidthWithAccessoryDisclosure       (15 + 35)
-#define kLabelMarginWidthWithAccessoryDetailDisclosure (15 + 67)
-#define kLabelMarginWidthWithAccessoryCheckmark        (15 + 39)
-#define kLabelMarginWidthWithAccessoryDetail           (15 + 47)
+#define kCellLayoutMarginLeft   15
+#define kCellLayoutMarginRight  15
+#define kCellLayoutMarginHeight 21
+
+#define kAccessoryDisclosureWidth       33
+#define kAccessoryDetailDisclosureWidth 67
+#define kAccessoryCheckmarkWidth        39
+#define kAccessoryDetailWidth           47
 
 @implementation BasicTableViewController
 
@@ -67,30 +69,36 @@
     } else {
         // iOS 7.x or earlier
         NSString *text = [self textLabelTextAtIndexPath:indexPath];
-        CGFloat labelMarginWidth;
+        CGFloat leftMarginWidth, rightMarginWidth;
         switch (indexPath.row % 5) {
             case 0:
-                labelMarginWidth = kLabelMarginWidthWithAccessoryNone;
+                leftMarginWidth = kCellLayoutMarginLeft;
+                rightMarginWidth = kCellLayoutMarginRight;
                 break;
             case 1:
-                labelMarginWidth = kLabelMarginWidthWithAccessoryDisclosure;
+                leftMarginWidth = kCellLayoutMarginLeft;
+                rightMarginWidth = kAccessoryDisclosureWidth;
                 break;
             case 2:
-                labelMarginWidth = kLabelMarginWidthWithAccessoryDetailDisclosure;
+                leftMarginWidth = kCellLayoutMarginLeft;
+                rightMarginWidth = kAccessoryDetailDisclosureWidth;
                 break;
             case 3:
-                labelMarginWidth = kLabelMarginWidthWithAccessoryCheckmark;
+                leftMarginWidth = kCellLayoutMarginLeft;
+                rightMarginWidth = kAccessoryCheckmarkWidth;
                 break;
             case 4:
-                labelMarginWidth = kLabelMarginWidthWithAccessoryDetail;
+                leftMarginWidth = kCellLayoutMarginLeft;
+                rightMarginWidth = kAccessoryDetailWidth;
                 break;
             default:
                 NSAssert1(NO, @"*** %s: section index out of bounds", __PRETTY_FUNCTION__);
-                labelMarginWidth = 0;
+                leftMarginWidth = 0;
+                rightMarginWidth = 0;
                 break;
         }
-        CGRect textRect = [text boundingRectWithSize:CGSizeMake(CGRectGetWidth(tableView.frame) - labelMarginWidth, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]} context:nil];
-        CGFloat height = CGRectGetHeight(textRect) + kLabelMarginHeight;
+        CGRect textRect = [text boundingRectWithSize:CGSizeMake(CGRectGetWidth(tableView.frame) - leftMarginWidth - rightMarginWidth, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:@{NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]} context:nil];
+        CGFloat height = CGRectGetHeight(textRect) + kCellLayoutMarginHeight;
         return MAX(ceil(height), kDefaultCellHeight);
     }
 }
